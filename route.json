@@ -1,0 +1,10 @@
+{
+    "routes": {
+        "internet" : {
+            "name": "Internet",
+            "dest_range": "0.0.0.0/0",
+            "next_hop_gateway": "default-internet-gateway",
+            "priority": "1000"
+        }
+    }
+}

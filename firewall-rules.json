@@ -1,0 +1,22 @@
+{
+  "rules": { 
+    "ssh": {
+      "protocol": "tcp",
+      "ports": "22",
+      "target_tags": "ssh",
+      "source_ranges": "0.0.0.0/0"
+    },
+    "https": {
+      "protocol": "tcp",
+      "ports": "443",
+      "target_tags": "https",
+      "source_ranges": "10.0.1.0/24,10.0.2.0/24"
+    },
+    "http": {
+      "protocol": "tcp",
+      "ports": "80",
+      "target_tags": "http",
+      "source_ranges": "10.0.1.0/24,10.0.2.0/24"
+    }
+  }
+}
