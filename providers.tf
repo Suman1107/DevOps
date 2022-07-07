@@ -1,3 +1,3 @@
 provider "google" {
-  credentials = "/home/ec2-user/environment/Terraform-Devops/GCP/VPC/gcp-sa.json"
+  credentials = "/home/ec2-user/environment/Devops/gcp-sa.json"
 }

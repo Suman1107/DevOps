@@ -1,4 +1,5 @@
 #=================root/main.tf========================#
+
 module "VPC" {
   source       = "./VPC"
   project_name = var.project_id
@@ -47,14 +48,21 @@ module "Instance" {
   image_self_link         = module.Image.image_self_link
   vpc_self_link           = module.VPC.vpc_self_link
   public_subnet_self_link = module.Subnet.public_subnet_self_link
-#  external_ip = module.External-Ip.external_ip
-  user = "ubuntu"
-  publickeypath = "/home/ec2-user/.ssh/id_rsa.pub"
+  #  external_ip = module.External-Ip.external_ip
+  user          = "ubuntu"
+#  publickeypath = "/home/ec2-user/.ssh/id_rsa.pub"
 }
 
 module "External-Ip" {
   source           = "./External-Ip"
   public_subnet_id = module.Subnet.public_subnet_id
-  project_id          = var.project_id
+  project_id       = var.project_id
   region           = "us-central1"
+}
+
+module "GCS" {
+  source        = "./GCS"
+  location      = "us-central1"
+  project_id    = var.project_id
+  storage_class = "STANDARD"
 }

@@ -21,11 +21,12 @@ resource "google_compute_instance" "jump-server" {
     network    = var.vpc_self_link
     subnetwork = var.public_subnet_self_link
     access_config {
-#      nat_ip = var.external_ip
+      #      nat_ip = var.external_ip
     }
   }
-  
+/*
   metadata = {
     sshkeys = "${var.user}:${file(var.publickeypath)}"
   }
+*/
 } 

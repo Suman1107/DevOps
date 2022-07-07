@@ -40,13 +40,14 @@ variable "external_ip" {
   description = "External Ip for the GCE"
   type = string
 }
-*/
-variable "user" {
-  description = "Enter the user name of the remote machine"
-  type = string
-}
 
 variable "publickeypath" {
   description = "Path to your ssh public key file"
-  type = string
+  type        = string
 }
+*/
+variable "user" {
+  description = "Enter the user name of the remote machine"
+  type        = string
+}
+
